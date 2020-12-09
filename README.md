@@ -19,8 +19,8 @@ Here is an example of the expected format for the dataset:
         "label": "spam"
     },
     {
-        message: "I am an important message",
-        label: "valid"
+        "message": "I am an important message",
+        "label": "valid"
     }
 ]
 ```
