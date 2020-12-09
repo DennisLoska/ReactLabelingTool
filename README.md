@@ -34,7 +34,7 @@ In the configuration file of the frontend you need to add the fields **message**
 }
 ```
 
-That's it! now you can start labeling after a new quick commands. First install all dependencies:
+That's it! now you can start labeling after a few quick commands. First install all dependecies:
 
 ```
 npm install
