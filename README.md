@@ -15,8 +15,8 @@ Here is an example of the expected format for the dataset:
 ```json
 [
     {
-        message: "I am a spam message",
-        label: "spam"
+        "message": "I am a spam message",
+        "label": "spam"
     },
     {
         message: "I am an important message",
