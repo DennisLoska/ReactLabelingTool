@@ -8,7 +8,7 @@ You can use this tool to label your JSON datasets.
 
 ![Labeling Tool Preview](labeling_tool.png)
 
-Simply put your JSON file in **server/data** and change the configuration file in the frontend to map your label and your data fields.
+Simply put your JSON file in **server/data** and name it **datase.json** and then change the configuration file in the frontend to map your label and your data fields.
 
 Here is an example of the expected format for the dataset:
 
