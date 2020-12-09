@@ -24,7 +24,7 @@ Here is an example of the expected format for the dataset:
     }
 ]
 ```
-In the configuration file of the frontend you need to add the fields **message** and **label** to the config file and also list all the labels you plan to use. Here is an example:
+In the configuration file of the frontend you need to add the fields **message** and **label** (in case of the example) to the config file and also list all the labels you plan to use. Here is an example:
 
 ```js
 {
