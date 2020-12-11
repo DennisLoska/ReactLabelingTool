@@ -1,0 +1,16 @@
+version: "3"
+services:
+  neuralcomposer:
+    container_name: labeling-tool
+    image: "node:10-buster-slim"
+    user: "node"
+    working_dir: /home/node
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - ./app:/home/node
+    restart: unless-stopped
+    ports:
+      - "92:5000/tcp"
+    command: "chown -R node:node /home/node/app"
+    command: "node src/server/index.js"
