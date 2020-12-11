@@ -9,7 +9,6 @@ const App = () => {
   const [i, setIndex] = useState(0);
   const { labels, label, value } = config;
 
-  // 1500
   const fetchData = async () => {
     const res = await fetch('/api/getDataset');
     const dataset = await res.json();
@@ -89,7 +88,7 @@ const App = () => {
         data !== null && error === false ? (
           <div className="labeling__content">
             <div className="labeling__transcript">
-              <h2>Transcription</h2>
+              <h2>Current value</h2>
               <textarea
                 name="transcript"
                 id="transcript"
@@ -111,7 +110,7 @@ const App = () => {
             </div>
             <div className="labeling__menu">
               <div className="labeling__current">
-                <h2>Current Message</h2>
+                <h2>Current item</h2>
                 <span className="labeling__counter">{`${i} of ${data.length - 1}`}</span>
               </div>
               <div className="labeling__actions">
@@ -148,7 +147,7 @@ const App = () => {
                 </div>
               </div>
               <div className="labeling__navigation">
-                <h2>Navigate</h2>
+                <h2>Navigate by index</h2>
                 <input
                   id="nav-index"
                   name="nav-index"
