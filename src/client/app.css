@@ -56,7 +56,7 @@ h1 {
 }
 
 .labeling__labeltext {
-    width: 140px;
+    width: 160px;
     height: 1em;
     font-size: 1em;
     margin-bottom: 5px;
@@ -79,7 +79,7 @@ h1 {
 .labeling__buttons > button {
     font-size: 1em;
     font-weight: bold;
-    width: 80px;
+    width: 120px;
     height: 40px;
     border-radius: 3px;
 }
