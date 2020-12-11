@@ -52,4 +52,10 @@ And to start the application just run:
 npm start
 ```
 
+if you want to run the setup in a docker container make sure to set appropriate file permissions on your host system to be able to save the changes for example:
+
+```s
+sudo chmod 777 -R src/
+```
+
 Now you can go to **http://localhost:5000** and start labeling your data!

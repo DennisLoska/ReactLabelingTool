@@ -12,5 +12,4 @@ services:
     restart: unless-stopped
     ports:
       - "92:5000/tcp"
-    command: "chown -R node:node /home/node/app"
     command: "node src/server/index.js"
