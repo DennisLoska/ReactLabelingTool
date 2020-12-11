@@ -36,19 +36,19 @@ In the configuration file of the frontend you need to add the fields **message**
 
 That's it! now you can start labeling after a few quick commands. First install all dependecies:
 
-```
+```s
 npm install
 ```
 
 Now build the project:
 
-```
+```s
 npm run build
 ```
 
 And to start the application just run:
 
-```
+```s
 npm start
 ```
 
