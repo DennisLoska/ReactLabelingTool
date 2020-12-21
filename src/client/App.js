@@ -7,6 +7,7 @@ const App = () => {
   const [error, setError] = useState(false);
   const [success, setSuccess] = useState(false);
   const [i, setIndex] = useState(0);
+  const [togglePopup, setPopup] = useState(false);
   const { labels, label, value } = config;
 
   const fetchData = async () => {
@@ -49,6 +50,10 @@ const App = () => {
     }
   };
 
+  const deleteCurrentField = () => {
+    setData(data.filter((item, index) => index !== i));
+  };
+
   const handleTranscriptChange = (e) => {
     setData(data.map((item, index) => {
       if (index === i) {
@@ -81,9 +86,60 @@ const App = () => {
     </div>
   ));
 
+  const closePopup = (deleteItem = false) => {
+    if (deleteItem) deleteCurrentField();
+    setPopup(false);
+  };
+
   return (
     <div className="labeling__wrapper">
       <h1>JSON Labeling Tool</h1>
+
+      {
+      togglePopup ? (
+        <div className="labeling__popup">
+          <div className="labeling__popupInner">
+            <h3>Deleting field!</h3>
+            <p>
+              Are you sure you want to delete the current field?
+            </p>
+            <p>Current data:</p>
+            <ul>
+              <li>
+                <span>Index: </span>
+                {i}
+              </li>
+              <li>
+                <span>Value: </span>
+                {data[i][value].substring(0, 40)}
+                {data[i][value].length > 40 ? '...' : null}
+              </li>
+              <li>
+                <span>Label: </span>
+                {data[i][label]}
+              </li>
+            </ul>
+            <button
+              type="button"
+              className="labeling__button labeling__button--popup"
+              onClick={() => closePopup(true)}
+            >
+              Delete
+            </button>
+            <button
+              type="button"
+              className="labeling__button labeling__button--popup"
+              onClick={() => closePopup()}
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+
+      )
+        : null
+       }
+
       {
         data !== null && error === false ? (
           <div className="labeling__content">
@@ -116,27 +172,40 @@ const App = () => {
               <div className="labeling__actions">
                 <h2>Actions</h2>
                 <div className="labeling__buttons">
-                  <button
-                    className="labeling__back"
-                    type="button"
-                    onClick={() => setIndex(validRange(i - 1))}
-                  >
-                    Back
-                  </button>
-                  <button
-                    className="labeling__next"
-                    type="button"
-                    onClick={() => setIndex(validRange(i + 1))}
-                  >
-                    Next
-                  </button>
-                  <button
-                    className="labeling__save"
-                    type="button"
-                    onClick={() => updateData()}
-                  >
-                    Save
-                  </button>
+                  <div className="labeling__buttonRow">
+                    <button
+                      className="labeling__button"
+                      type="button"
+                      onClick={() => setIndex(validRange(i - 1))}
+                    >
+                      Back
+                    </button>
+                    <button
+                      className="labeling__button"
+                      type="button"
+                      onClick={() => setIndex(validRange(i + 1))}
+                    >
+                      Next
+                    </button>
+
+                  </div>
+                  <div className="labeling__buttonRow">
+                    <button
+                      className="labeling__button"
+                      type="button"
+                      onClick={() => setPopup(true)}
+                    >
+                      Delete
+                    </button>
+                    <button
+                      className="labeling__button"
+                      type="button"
+                      onClick={() => updateData()}
+                    >
+                      Save
+                    </button>
+
+                  </div>
                 </div>
                 <div className="labeling__success">
                   {
