@@ -1,6 +1,6 @@
 version: "3"
 services:
-  neuralcomposer:
+  labeling-tool:
     container_name: labeling-tool
     image: "node:10-buster-slim"
     user: "node"
@@ -8,7 +8,7 @@ services:
     environment:
       - NODE_ENV=production
     volumes:
-      - ./app:/home/node
+      - ./:/home/node
     restart: unless-stopped
     ports:
       - "92:5000/tcp"
