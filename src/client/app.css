@@ -96,14 +96,17 @@ h1 {
 }
 
 .labeling__labeltext {
-    width: 160px;
+    width: 100%;
     height: 40px;
     font-size: 1em;
     margin-bottom: 5px;
+    padding: 0px;
+    border: 0px;
     padding-left: 10px;
     line-height: 40px;
     border-radius: 5px;
     resize: none;
+    box-sizing: border-box;
 }
 
 .labeling__counter {
@@ -203,6 +206,10 @@ h1 {
 
     .labeling__transcript, .labeling__label, .labeling__menu {
         width: 100%;
+    }
+
+    .labeling__radio {
+        float: left;
     }
 }
 
