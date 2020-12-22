@@ -220,4 +220,8 @@ h1 {
         right: 5%;
         height: 360px;
     }
+
+    .labeling__button--popup {
+        width: 43%;
+    }
 }
