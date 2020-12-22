@@ -93,7 +93,7 @@ const App = () => {
 
   return (
     <div className="labeling__wrapper">
-      <h1>JSON Labeling Tool</h1>
+      <h1>Keep on labeling!</h1>
 
       {
       togglePopup ? (
@@ -121,7 +121,7 @@ const App = () => {
             </ul>
             <button
               type="button"
-              className="labeling__button labeling__button--popup"
+              className="labeling__button labeling__button--popup labeling__button--delete"
               onClick={() => closePopup(true)}
             >
               Delete
@@ -191,14 +191,14 @@ const App = () => {
                   </div>
                   <div className="labeling__buttonRow">
                     <button
-                      className="labeling__button"
+                      className="labeling__button labeling__button--delete"
                       type="button"
                       onClick={() => setPopup(true)}
                     >
                       Delete
                     </button>
                     <button
-                      className="labeling__button"
+                      className="labeling__button labeling__button--save"
                       type="button"
                       onClick={() => updateData()}
                     >
@@ -210,18 +210,18 @@ const App = () => {
                 <div className="labeling__success">
                   {
                     success ? (
-                      <span>Dataset successfully saved!</span>
+                      <span>Dataset saved!</span>
                     ) : null
                   }
                 </div>
               </div>
               <div className="labeling__navigation">
-                <h2>Navigate by index</h2>
+                <h2>Navigation</h2>
                 <input
                   id="nav-index"
                   name="nav-index"
                   type="number"
-                  value={i}
+                  value={i.toString()}
                   onChange={e => setIndex(validRange(parseInt(e.target.value, 10) || 0))}
                 />
               </div>

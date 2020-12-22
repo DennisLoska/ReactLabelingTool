@@ -62,8 +62,8 @@ h1 {
     display: flex;
     justify-content: space-between;
     height: 100%;
-    margin-left: 20%;
-    margin-right: 20%;
+    margin-left: 25%;
+    margin-right: 25%;
 }
 
 .labeling__transcript {
@@ -86,22 +86,22 @@ h1 {
 
 .labeling__datatext {
     width: 100%;
-    height: 275px;
+    height: 380px;
     font-size: 1em;
     padding: 10px;
     box-sizing: border-box;
     border-radius: 5px;
+    background-color: #fcfcfc;
     resize: none;
 }
 
 .labeling__labeltext {
     width: 160px;
-    height: 1em;
+    height: 40px;
     font-size: 1em;
     margin-bottom: 5px;
     padding-left: 10px;
-    line-height: 30px;
-    height: 30px;
+    line-height: 40px;
     border-radius: 5px;
     resize: none;
 }
@@ -113,15 +113,28 @@ h1 {
 .labeling__buttonRow {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 
 .labeling__button {
-    font-size: 1em;
+    -webkit-box-shadow: 0 0 0 0 rgba(34,36,38,.15) inset;
+    -moz-box-shadow: 0 0 0 0 rgba(34,36,38,.15) inset;
+    box-shadow: 0 0 0 0 rgba(34,36,38,.15) inset;
+    font-size: 1rem;
     font-weight: bold;
-    width: 49.5%;
+    width: 48%;
     height: 40px;
-    border-radius: 3px;
+    border: 0px;
+    border-radius: 4px;
+    text-shadow: none;
+    outline: none;
+    color: #fff;
+    background-color: #2185d0;
+}
+
+.labeling__button:hover {
+    cursor: pointer;
+    background-color: #1678c2;
 }
 
 .labeling__button--popup {
@@ -130,16 +143,29 @@ h1 {
     margin-right: 15px;
 }
 
-.labeling__button:hover {
-    cursor: pointer;
-    background-color: #d8d8d8;
+.labeling__button--delete {
+    background-color: #db2828;
+}
+
+.labeling__button--delete:hover {
+    background-color: #d01919;
+}
+
+.labeling__button--save {
+    background-color: #21ba45;
+}
+
+.labeling__button--save:hover {
+    background-color: #16ab39;
 }
 
 .labeling__navigation > input[type="number"] {
-    height: 30px;
-    line-height: 30px;
+    height: 40px;
+    line-height: 40px;
     padding-left: 10px;
     font-size: 1em;
+    border: 0px;
+    border-radius: 5px;
     box-sizing: border-box;
     width: 100%;
 }
