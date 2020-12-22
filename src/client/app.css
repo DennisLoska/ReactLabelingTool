@@ -143,7 +143,8 @@ h1 {
 .labeling__button--popup {
     width: 25%;
     min-width: 90px;
-    margin-right: 15px;
+    margin-left: 15px;
+    float: right;
 }
 
 .labeling__button--delete {

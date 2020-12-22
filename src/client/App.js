@@ -121,17 +121,17 @@ const App = () => {
             </ul>
             <button
               type="button"
-              className="labeling__button labeling__button--popup labeling__button--delete"
-              onClick={() => closePopup(true)}
-            >
-              Delete
-            </button>
-            <button
-              type="button"
               className="labeling__button labeling__button--popup"
               onClick={() => closePopup()}
             >
               Cancel
+            </button>
+            <button
+              type="button"
+              className="labeling__button labeling__button--popup labeling__button--delete"
+              onClick={() => closePopup(true)}
+            >
+              Delete
             </button>
           </div>
         </div>
