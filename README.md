@@ -1,7 +1,16 @@
-# ReactLabelingTool
+# Labeling Tool
 
-_Author: Dennis Loska_
+_Author: Dennis Loska, 21.02.2021_
 
+## Demo
+
+You can find a running demo of this application here:
+
+https://labeling-tool.dennisloska.com/
+
+The source code for this application is also available on my Github:
+
+https://github.com/DennisLoska/ReactLabelingTool
 ## Setup
 
 You can use this tool to label your JSON datasets.
@@ -24,6 +33,7 @@ Here is an example of the expected format for the dataset:
     }
 ]
 ```
+
 In the configuration file of the frontend you need to add the fields **message** and **label** (in case of the example) to the config file and also list all the labels you plan to use. Here is an example:
 
 ```js

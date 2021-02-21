@@ -3,11 +3,14 @@ import './app.css';
 import config from './config';
 
 const App = () => {
+  // setup initial component state
   const [data, setData] = useState(null);
   const [error, setError] = useState(false);
   const [success, setSuccess] = useState(false);
   const [i, setIndex] = useState(0);
   const [togglePopup, setPopup] = useState(false);
+
+  // load settings from configuration file
   const { labels, label, value } = config;
 
   const fetchData = async () => {
@@ -20,15 +23,18 @@ const App = () => {
   };
 
   useEffect(() => {
+    // fetch dataset from the node.js server
     fetchData();
   }, []);
 
+  // used to handle navigation by index
   const validRange = (number) => {
     if (number < 0) return 0;
     if (number >= data.length) return data.length - 1;
     return number;
   };
 
+  // POST request to update & save dataset in server
   const updateData = async () => {
     const res = await fetch('/api/updateDataset', {
       method: 'POST',
@@ -43,6 +49,8 @@ const App = () => {
       setError(dataset.error);
     } else {
       setData(dataset);
+
+      // logic of success message
       setSuccess(true);
       setTimeout(() => {
         setSuccess(false);
@@ -50,10 +58,12 @@ const App = () => {
     }
   };
 
+  // removes item from the dataset array
   const deleteCurrentField = () => {
     setData(data.filter((item, index) => index !== i));
   };
 
+  // onChange function when the transcription is being edited
   const handleTranscriptChange = (e) => {
     setData(data.map((item, index) => {
       if (index === i) {
@@ -63,6 +73,7 @@ const App = () => {
     }));
   };
 
+  // onChange function when the label is being edited
   const handleLabelChange = (e) => {
     setData(data.map((item, index) => {
       if (index === i) {
@@ -72,6 +83,7 @@ const App = () => {
     }));
   };
 
+  // render radio buttons for list of available labels
   const renderRadioInputs = () => labels.map(labelName => (
     <div className="labeling__radio" key={labelName}>
       <input
@@ -86,6 +98,7 @@ const App = () => {
     </div>
   ));
 
+  // onClick function for closing the confirmation popup
   const closePopup = (deleteItem = false) => {
     if (deleteItem) deleteCurrentField();
     setPopup(false);

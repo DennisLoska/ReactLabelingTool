@@ -11,6 +11,7 @@ const app = express();
 app.use(express.static('dist'));
 app.use(bodyParser.json({ limit: '50mb' }));
 
+// GET endpoint to load dataset from JSON file
 app.get('/api/getDataset', async (req, res) => {
   try {
     const buffer = await readFile(`${__dirname}/data/dataset.json`);
@@ -22,6 +23,7 @@ app.get('/api/getDataset', async (req, res) => {
   }
 });
 
+// POST endpoint to save dataset from request body to JSON file
 app.post('/api/updateDataset', async (req, res) => {
   try {
     const data = JSON.stringify(req.body);
